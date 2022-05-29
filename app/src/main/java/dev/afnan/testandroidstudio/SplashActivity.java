@@ -15,9 +15,9 @@ public class SplashActivity extends AppCompatActivity {
 
     ImageView logo;
     TextView tagline, footer;
-    Animation scale, top, bottom;
+    Animation scale, top;
 
-    private static int SPLASH_SCREEN = 2500;
+    private static int SPLASH_SCREEN_TIME = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,6 @@ public class SplashActivity extends AppCompatActivity {
         footer = findViewById(R.id.footer);
 
         scale = AnimationUtils.loadAnimation(this, R.anim.scale);
-        bottom = AnimationUtils.loadAnimation(this, R.anim.bottom);
         top = AnimationUtils.loadAnimation(this, R.anim.top);
 
         logo.setAnimation(scale);
@@ -47,7 +46,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, SPLASH_SCREEN
+        }, SPLASH_SCREEN_TIME
         );
 
     }
